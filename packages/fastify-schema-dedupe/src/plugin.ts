@@ -71,9 +71,14 @@ const fastifySchemaDedupePluginCallback: FastifyPluginCallback<FastifySchemaDedu
   fastify.decorate('getSchemaDedupeStats', () => ({ ...stats }));
 
   fastify.addHook('onRoute', (routeOptions) => {
-    const routeSchema = routeOptions.schema;
-    if (!isPlainObject(routeSchema)) {
+    if (!isPlainObject(routeOptions.schema)) {
       return;
+    }
+
+    const routeSchema = { ...routeOptions.schema };
+    routeOptions.schema = routeSchema;
+    if (isPlainObject(routeSchema.response)) {
+      routeSchema.response = { ...routeSchema.response };
     }
 
     const requestSlots: Exclude<SchemaDedupeSlot, 'response'>[] = ['body', 'querystring', 'params', 'headers'];

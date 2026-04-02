@@ -21,7 +21,7 @@ try {
       expectedSharedSchemaCount,
       sharedSchemaIds: sharedSchemas,
     },
-    'fastify-schema-dedupe: stats (5 slots × duplicate inline schema: body, querystring, params, headers, response)',
+    'fastify-schema-dedupe: stats (5 unique slots; GET routes also register HEAD with the same schemas)',
   );
 } catch (err) {
   app.log.error(err);

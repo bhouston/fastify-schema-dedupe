@@ -4,11 +4,11 @@ export default defineConfig({
   test: {
     watch: false,
     isolate: false,
-    include: ['packages/**/src/**/*.test.ts'],
+    include: ['packages/**/src/**/*.test.ts', 'demos/**/src/**/*.test.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
-      include: ['packages/**/src/**/*.test.ts'],
+      include: ['packages/**/src/**/*.test.ts', 'demos/**/src/**/*.test.ts'],
     },
   },
 });

@@ -1,6 +1,6 @@
 {
   "name": "fastify-schema-dedupe",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Fastify plugin that deduplicates inline JSON Schemas to reduce Ajv compilation work at startup.",
   "keywords": [
     "ajv",
