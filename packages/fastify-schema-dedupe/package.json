@@ -1,0 +1,52 @@
+{
+  "name": "fastify-schema-dedupe",
+  "version": "0.1.0",
+  "description": "Fastify plugin that deduplicates inline JSON Schemas to reduce Ajv compilation work at startup.",
+  "keywords": [
+    "ajv",
+    "dedupe",
+    "fastify",
+    "json-schema",
+    "nodejs",
+    "plugin",
+    "schema",
+    "typescript"
+  ],
+  "homepage": "https://github.com/bhouston/fastify-schema-dedupe#readme",
+  "bugs": {
+    "url": "https://github.com/bhouston/fastify-schema-dedupe/issues"
+  },
+  "license": "MIT",
+  "author": "Ben Houston <neuralsoft@gmail.com> (https://ben3d.ca)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhouston/fastify-schema-dedupe"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsgo",
+    "dev": "tsgo --watch",
+    "tsgo": "tsgo"
+  },
+  "dependencies": {
+    "fast-json-stable-stringify": "^2.1.0",
+    "fastify": "^5.0.0",
+    "fastify-plugin": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24"
+  },
+  "peerDependencies": {
+    "ajv": "^8",
+    "fastify": "^5"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

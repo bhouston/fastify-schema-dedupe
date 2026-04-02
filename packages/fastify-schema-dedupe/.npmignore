@@ -1,0 +1,7 @@
+# Test files
+**/*.test.*
+
+# Test fixtures
+**/fixtures/**
+
+.tsbuildinfo
