@@ -38,15 +38,6 @@ jobs:
       - name: Run build
         run: pnpm build
 
-      - name: Run linter
-        run: pnpm lint
-
-      - name: Run format check
-        run: pnpm format
-
-      - name: Run tests
-        run: pnpm test
-
       - name: Run tests with coverage
         run: pnpm vitest run --coverage
 
