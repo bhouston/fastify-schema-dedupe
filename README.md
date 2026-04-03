@@ -1,7 +1,5 @@
 # fastify-schema-dedupe
 
-[![NPM Package][npm]][npm-url]
-[![NPM Downloads][npm-downloads]][npmtrends-url]
 [![CI][ci-badge]][ci-url]
 
 > **Archived.** This project is **not recommended for new use**. Startup benchmarks with **large, nested, duplicated** route schemas showed **no meaningful improvement** over baseline Fastify—on the order of **~1.00× to ~1.06×**, i.e. noise. **Ajv already avoids redundant compilation** for the same logical schema shape; doing the same job earlier at the Fastify layer (canonicalize, hash, `addSchema`, `$ref`) does not buy wall-clock startup and can add measurable overhead. Prefer Fastify’s ordinary schema registration.
@@ -111,9 +109,5 @@ Benchmark numbers depend on **machine, Node version, and load**; treat them as *
 
 [Ben Houston](https://ben3d.ca), sponsored by [Land of Assets](https://landofassets.com)
 
-[npm]: https://img.shields.io/npm/v/fastify-schema-dedupe
-[npm-url]: https://www.npmjs.com/package/fastify-schema-dedupe
-[npm-downloads]: https://img.shields.io/npm/dw/fastify-schema-dedupe
-[npmtrends-url]: https://www.npmtrends.com/fastify-schema-dedupe
 [ci-badge]: https://github.com/bhouston/fastify-schema-dedupe/actions/workflows/ci.yml/badge.svg
 [ci-url]: https://github.com/bhouston/fastify-schema-dedupe/actions/workflows/ci.yml
