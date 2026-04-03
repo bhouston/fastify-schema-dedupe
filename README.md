@@ -82,6 +82,12 @@ pnpm format
 pnpm test
 ```
 
+### Benchmarks (startup)
+
+`pnpm bench` runs [Vitest benchmarks](https://vitest.dev/guide/features.html#benchmarking-experimental) (Tinybench) in [`packages/fastify-schema-dedupe/src/plugin.startup.bench.ts`](packages/fastify-schema-dedupe/src/plugin.startup.bench.ts): 300 routes with duplicated inline `body` and `response` schemas, comparing baseline Fastify to the same app with `fastifySchemaDedupePlugin`. Each sample times a full cycle (new instance, route registration, `await app.ready()`, and `close()`; a second suite also calls `listen`).
+
+Results vary by machine and Node version. They are for local investigation only: **do not use hard performance thresholds in CI**, since noise and JIT effects make that unreliable. The benchmark may show slower wall time with the plugin when route-count is modest, because per-route `onRoute` work (serialize + hash) is included in the timed loop; try raising `ROUTE_COUNT` in the bench file if you want compilation savings to dominate.
+
 ## Author
 
 [Ben Houston](https://ben3d.ca), sponsored by [Land of Assets](https://landofassets.com)

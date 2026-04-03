@@ -15,6 +15,7 @@
     "tsc": "tsgo -b",
     "tsgo": "pnpm -r tsgo",
     "test": "pnpm vitest",
+    "bench": "vitest bench --run --no-file-parallelism",
     "cloc": "npx cloc * --exclude-dir=node_modules,dist,.nx,.next,build"
   },
   "devDependencies": {

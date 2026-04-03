@@ -5,6 +5,9 @@ export default defineConfig({
     watch: false,
     isolate: false,
     include: ['packages/**/src/**/*.test.ts', 'demos/**/src/**/*.test.ts'],
+    benchmark: {
+      include: ['packages/**/src/**/*.bench.ts'],
+    },
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
